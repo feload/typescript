@@ -33,3 +33,32 @@ class Felipe extends Person {
 
 const felipe = new Felipe();
 console.log(felipe);
+
+// Getters and setters.
+class Plant {
+  private _species: string = "Default";
+
+  set species (value: string) {
+    if (value.length > 3) {
+      this._species = value;
+    }
+  }
+
+  get species () : string {
+    return this._species;
+  }
+}
+
+const plant = new Plant();
+console.log(plant.species);
+plant.species = "Animal species";
+console.log(plant.species);
+
+// Static properties & methods.
+class Helpers {
+  static PI: number = 3.1416;
+  static calcCircum (diam: number) : number {
+    return this.PI * diam;
+  }
+}
+console.log(Helpers.calcCircum(2));

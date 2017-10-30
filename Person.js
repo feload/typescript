@@ -40,4 +40,38 @@ var Felipe = /** @class */ (function (_super) {
 }(Person));
 var felipe = new Felipe();
 console.log(felipe);
+// Getters and setters.
+var Plant = /** @class */ (function () {
+    function Plant() {
+        this._species = "Default";
+    }
+    Object.defineProperty(Plant.prototype, "species", {
+        get: function () {
+            return this._species;
+        },
+        set: function (value) {
+            if (value.length > 3) {
+                this._species = value;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Plant;
+}());
+var plant = new Plant();
+console.log(plant.species);
+plant.species = "Animal species";
+console.log(plant.species);
+// Static properties & methods.
+var Helpers = /** @class */ (function () {
+    function Helpers() {
+    }
+    Helpers.calcCircum = function (diam) {
+        return this.PI * diam;
+    };
+    Helpers.PI = 3.1416;
+    return Helpers;
+}());
+console.log(Helpers.calcCircum(2));
 //# sourceMappingURL=Person.js.map
