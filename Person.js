@@ -74,4 +74,27 @@ var Helpers = /** @class */ (function () {
     return Helpers;
 }());
 console.log(Helpers.calcCircum(2));
+// Abstract classes.
+var Project = /** @class */ (function () {
+    function Project() {
+        this.projectName = "Default";
+    }
+    Project.prototype.calcBudget = function () {
+        return this.budget * 2;
+    };
+    return Project;
+}());
+var ITProject = /** @class */ (function (_super) {
+    __extends(ITProject, _super);
+    function ITProject() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ITProject.prototype.changeName = function (name) {
+        this.projectName = name;
+    };
+    return ITProject;
+}(Project));
+var newProject = new ITProject();
+newProject.changeName("Super IT project");
+console.log(newProject);
 //# sourceMappingURL=Person.js.map

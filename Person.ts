@@ -62,3 +62,24 @@ class Helpers {
   }
 }
 console.log(Helpers.calcCircum(2));
+
+// Abstract classes.
+abstract class Project {
+  projectName: string = "Default";
+  budget: number;
+
+  abstract changeName (name: string) :void;
+
+  calcBudget () {
+    return this.budget * 2;
+  }
+}
+class ITProject extends Project {
+  changeName (name: string) : void {
+    this.projectName = name;
+  }
+}
+
+const newProject = new ITProject();
+newProject.changeName("Super IT project");
+console.log(newProject);
