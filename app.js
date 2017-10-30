@@ -1,4 +1,3 @@
-"use strict";
 // string
 var myName = 'Felipe';
 // number
@@ -76,3 +75,4 @@ function neverReturns() {
 // Nullable types.
 var canBeNull = 12;
 canBeNull = null;
+//# sourceMappingURL=app.js.map
